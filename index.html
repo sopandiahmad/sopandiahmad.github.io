@@ -1,0 +1,19 @@
+<meta content='width=device-width, initial-scale=1.0' name='viewport'/>
+<span id="countdown"></span><br/>Laman akan dialihkan menuju opan.my.id
+<script>
+var max_time = 300;
+var countdown_timer = setInterval(function(){
+max_time--;
+var jam=Math.floor(max_time/3600);
+var menit=Math.floor((max_time-3600*jam)/60);
+var detik=Math.floor(max_time%60);
+if(jam<10){jam="0"+jam;}
+if(menit<10){menit="0"+menit;}
+if(detik<10){detik="0"+detik;}
+document.getElementById("countdown").innerHTML = jam+":"+menit+":"+detik;
+if(max_time == 0){
+clearInterval(countdown_timer);
+window.location.href="https://opan.my.id";
+}
+},1000);
+</script>
